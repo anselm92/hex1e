@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+
+<h3 class="pb-4 mb-4 font-italic border-bottom">
+    From 0x1e
+</h3>
+{% for raffle in object_list %}
+<div class="blog-post">
+    <h2 class="blog-post-title">{{raffle.title}}</h2>
+    <div>
+        {{raffle.description | safe }}
+    </div>
+    <a href="{% url 'webapp:raffle-participant-create' raffle.id%}">Take part</a>
+    <hr>
+</div><!-- /.blog-post -->
+{% endfor %}
+<nav class="blog-pagination">
+    {% if page_obj.has_previous %}
+    <a class="btn btn-outline-primary" href="?page={{page_obj.previous_page_number}}">Older</a>
+    {% else %}
+    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Older</a>
+    {% endif %}
+
+    {% if page_obj.has_next %}
+    <a class="btn btn-outline-primary" href="?page={{page_obj.next_page_number}}">Newer</a>
+    {% else %}
+    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+    {% endif %}
+</nav>
+
+
+{% endblock %}
