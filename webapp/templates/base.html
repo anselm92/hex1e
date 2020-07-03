@@ -5,8 +5,7 @@
     <link>
     <meta charset="UTF-8">
     <title>This is 0x1e</title>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link media="all" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     {% block head %}
     {% endblock %}
 </head>
@@ -45,7 +44,7 @@
     <main role="main" class="container">
         <div class="row">
 
-            <div class="jumbotron p-4 p-md-5 text-white rounded "style="background-image: url({% static 'img/banner.jpg' %});">
+            <div class="jumbotron p-4 p-md-5 text-white rounded "style="background-image: url({% static 'img/banner.webp' %});">
                 <div class="col-md-6 px-0">
                     <h1 class="display-4 font-italic">Welcome at 0x1e</h1>
                     <p class="lead my-3">Computer geeks(?) doing computer stuff... custom PC builds, networking and server talk, programming discussions</p>
@@ -131,6 +130,7 @@
                 </div>
             </aside><!-- /.blog-sidebar -->
 
+            <script src="{% static 'js/bootstrap.js' %}"></script>
         </div><!-- /.row -->
 
     </main><!-- /.container -->
