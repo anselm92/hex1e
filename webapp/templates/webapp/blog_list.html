@@ -13,11 +13,11 @@
 <div class="blog-post">
     <h2 class="blog-post-title">{{blog.title}}</h2>
     <p class="blog-post-meta">{{ blog.date_posted|date:"d.m.Y"}}</p>
+    <hr>
     <img class="img-fluid" src="/{{blog.image.url}}">
     <div>
         {{blog.content | safe }}
     </div>
-    <hr>
 </div><!-- /.blog-post -->
 {% endfor %}
 <nav class="blog-pagination">

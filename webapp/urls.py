@@ -18,5 +18,6 @@ urlpatterns = [
 
   path('success/', TemplateView.as_view(template_name='webapp/success.html'), name='success'),
   path('privacy-policy/', TemplateView.as_view(template_name='webapp/privacy-policy.html'), name='privacy-policy'),
+  path('impressum/', TemplateView.as_view(template_name='webapp/impressum.html'), name='impressum'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

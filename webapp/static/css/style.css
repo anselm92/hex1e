@@ -1,0 +1,40 @@
+.blog-post {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+}
+hr {
+    background: white;
+}
+
+a {
+    color: #8000c0;
+}
+.nav-scroller {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 10px;
+}
+.nav-scroller a {
+    color: #8000c0;
+    font-weight: bold;
+}
+
+.blog-pagination .btn{
+    background: white;
+}
+.blog-post .blog-post-title {
+    color: #8000c0;
+}@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 14px;}
+}
+
+
+h5{
+    font-size: 1.4rem;
+}
