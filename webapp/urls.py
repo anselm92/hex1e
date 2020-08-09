@@ -10,7 +10,7 @@ app_name = 'webapp'
 
 urlpatterns = [
 
-  path('index/', BlogListView.as_view(), name='blog-list'),
+  path('', BlogListView.as_view(), name='blog-list'),
   path('index/<int:month>/<int:year>', BlogListView.as_view(), name='blog-list'),
 
   path('raffles/', RaffleListView.as_view(), name='raffle-list'),
