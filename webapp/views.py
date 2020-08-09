@@ -1,9 +1,12 @@
+from django.contrib import messages
+from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView
 from django.views.generic.base import ContextMixin
 
+from webapp.forms import RaffleForm
 from webapp.models import Raffle, Blog, RaffleParticipant
 
 
@@ -31,11 +34,17 @@ class RaffleListView(ListView):
 
 class RaffleParticipantView(CreateView):
     model = RaffleParticipant
-    fields = ['participant_name', 'participant_email']
+    form_class = RaffleForm
     success_url = reverse_lazy('webapp:success')
 
     def form_valid(self, form):
         raffle = get_object_or_404(Raffle, pk=self.kwargs['raffle_id'], active=True)
         form.instance.raffle = raffle
-        return super(RaffleParticipantView, self).form_valid(form)
-
+        try:
+            valid = super(RaffleParticipantView, self).form_valid(form)
+            messages.success(self.request, "Thanks for participating in this raffle. We'll notify the winner "
+                                           "via e-mail")
+            return valid
+        except IntegrityError:
+            messages.error(self.request, "You've already participated in this raffle.")
+            return super(RaffleParticipantView, self).form_invalid(form)

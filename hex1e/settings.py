@@ -20,12 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hidden'
+SECRET_KEY ='secret'
+RECAPTCHA_PUBLIC_KEY = 'public'
+RECAPTCHA_PRIVATE_KEY = 'private'
+RECAPTCHA_REQUIRED_SCORE = 0.6
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['164.90.176.239', '0x1e.de']
+ALLOWED_HOSTS = ['164.90.176.239', '0x1e.de', 'localhost']
 
 
 # Application definition
@@ -38,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'bootstrap4',
+    'captcha',
     'webapp'
 ]
 
