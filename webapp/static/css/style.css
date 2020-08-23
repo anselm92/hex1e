@@ -1,3 +1,12 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+code { font-family: 'Fira Code', monospace; }
+
+@supports (font-variation-settings: normal) {
+    code { font-family: 'Fira Code VF', monospace; }
+}
+body {
+    font-family: "Fira Code";
+}
 .blog-post {
 
     padding: 15px;
