@@ -1,5 +1,5 @@
 .blog-post {
-    background-color: grey;
+
     padding: 15px;
     border-radius: 10px;
     margin: 10px;
@@ -9,15 +9,25 @@ hr {
 }
 
 a {
-    color: #8000c0;
+    color: #C2C2C2;
 }
+
+.navbar {
+    font-size:1.45rem;
+}
+.navbar-brand {
+    font-size:1.45rem;
+}
+.navbar-dark {
+    background-color: #161616;
+}
+
 .nav-scroller {
-    background-color: grey;
     padding: 15px;
     border-radius: 10px;
 }
 .nav-scroller a {
-    color: #8000c0;
+    color: #C2C2C2;
     font-weight: bold;
 }
 
@@ -25,7 +35,6 @@ a {
     background: white;
 }
 .blog-post .blog-post-title {
-    color: #8000c0;
 }@media (max-width: @screen-xs) {
     body{font-size: 10px;}
 }
@@ -37,4 +46,7 @@ a {
 
 h5{
     font-size: 1.4rem;
+}
+footer {
+    text-align: right;
 }

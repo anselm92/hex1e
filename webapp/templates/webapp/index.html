@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="col-12 pb-3">
+    <div class="row align-items-center">
+        <div class="col-lg-6 col-12 align-middle">
+
+            <h1>0x1e/rs&ab</h1>
+            <p><span style="font-size: 1.3rem">we enjoy anything \r\n</span><br><span style="font-size: 1.3rem">computers</span></p>
+            <button type="button" class="mt-5 btn btn-primary btn-lg"><a href="{% url 'webapp:about-us' %}"> learn more </a> <i class="fas fa-1x fa-arrow-right"></i></button>
+
+        </div>
+        <div class="col-lg-6 col-12 pt-3">
+            <div class="row">
+                <div class="col-8">
+                    <img class="img-fluid" src="{% static 'img/computer_main.webp' %}">
+                </div>
+                <div class="col-3">
+                    <img class="img-fluid" src="{% static 'img/foto_anselm_main.webp' %}">
+                    <img class="pt-2 img-fluid" src="{% static 'img/foto_ralph_main.webp' %}">
+                    <img class="pt-2 img-fluid" src="{% static 'img/0x1e_logo_site.webp' %}">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
