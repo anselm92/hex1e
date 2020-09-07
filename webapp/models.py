@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 from webapp.fileupload import fs, blog_file_upload_handler, raffle_file_upload_handler
 
@@ -10,6 +9,7 @@ class Raffle(models.Model):
     # HTML Field
     description = models.CharField(max_length=1000, default=None, blank=True)
     image = models.FileField(storage=fs, upload_to=raffle_file_upload_handler, blank=True, null=True)
+    image_legacy = models.FileField(storage=fs, upload_to=raffle_file_upload_handler, blank=True, null=True)
     active = models.BooleanField(default=True)
 
 
@@ -27,6 +27,7 @@ class Blog(models.Model):
     content = models.CharField(max_length=2000, default="", blank=True, null=True)
     featured = models.BooleanField(default=False, blank=True)
     image = models.FileField(storage=fs, upload_to=blog_file_upload_handler)
+    image_legacy = models.FileField(storage=fs, upload_to=blog_file_upload_handler, blank=True, null=True)
     date_posted = models.DateTimeField(auto_created=True, auto_now=True, editable=True, )
 
     class Meta:

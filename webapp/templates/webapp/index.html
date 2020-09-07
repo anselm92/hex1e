@@ -19,12 +19,24 @@
         <div class="col-lg-6 col-12 pt-3">
             <div class="row">
                 <div class="col-8">
-                    <img class="img-fluid" src="{% static 'img/computer_main.webp' %}">
+                    <picture>
+                        <source class="img-fluid" srcset="{% static 'img/computer_main.webp' %}" type="image/webp">
+                        <img class="img-fluid" src="{% static 'img/computer_main.png' %}">
+                    </picture>
                 </div>
                 <div class="col-3">
-                    <img class="img-fluid" src="{% static 'img/foto_anselm_main.webp' %}">
-                    <img class="pt-2 img-fluid" src="{% static 'img/foto_ralph_main.webp' %}">
-                    <img class="pt-2 img-fluid" src="{% static 'img/0x1e_logo_site.webp' %}">
+                    <picture>
+                        <source class="img-fluid" srcset="{% static 'img/foto_anselm_main.webp' %}" type="image/webp">
+                        <img class="img-fluid" src="{% static 'img/foto_anselm_main.png' %}">
+                    </picture>
+                    <picture>
+                        <source class="pt-2 img-fluid" srcset="{% static 'img/foto_ralph_main.webp' %}" type="image/webp">
+                        <img class="pt-2 img-fluid" src="{% static 'img/foto_ralph_main.png' %}">
+                    </picture>
+                    <picture>
+                        <source class="pt-2 img-fluid" srcset="{% static 'img/0x1e_logo_site.webp' %}" type="image/webp">
+                        <img class="pt-2 img-fluid" src="{% static 'img/0x1e_logo_site.png' %}">
+                    </picture>
                 </div>
 
             </div>

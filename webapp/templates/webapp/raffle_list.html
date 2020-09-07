@@ -15,7 +15,11 @@
     <div class="blog-post">
         <h2 class="blog-post-title">{{raffle.title}}</h2>
         <a href="{% url 'webapp:raffle-participant-create' raffle.id%}">
-            <img class="img-fluid" src="/{{raffle.image.url}}">
+
+            <picture>
+                <source class="img-fluid" srcset="/{{raffle.image.url}}" type="image/webp">
+                <img class="img-fluid" src="/{{raffle.image_legacy.url}}">
+            </picture>
         </a>
         <div>
             {{raffle.description | safe }}

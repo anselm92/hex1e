@@ -14,7 +14,13 @@
     <h2 class="blog-post-title">{{blog.title}}</h2>
     <p class="blog-post-meta">{{ blog.date_posted|date:"d.m.Y"}}</p>
 
-    <img class="img-fluid" src="/{{blog.image.url}}">
+    <picture>
+        <source class="img-fluid" srcset="/{{blog.image.url}}" type="image/webp">
+        <img class="img-fluid" src="/{{blog.image_legacy.url}}">
+    </picture>
+
+
+    <img class="img-fluid" src="">
     <div>
         {{blog.content | safe }}
     </div>
