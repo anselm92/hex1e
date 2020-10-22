@@ -7,7 +7,7 @@ from django.views.generic import ListView, CreateView
 from django.views.generic.base import ContextMixin
 
 from webapp.forms import RaffleForm
-from webapp.models import Raffle, Blog, RaffleParticipant
+from webapp.models import Raffle, Blog, RaffleParticipant, Build
 
 
 class BaseView(ContextMixin):
@@ -30,6 +30,11 @@ class BlogListView(BaseView, ListView):
 class RaffleListView(ListView):
     model = Raffle
     value = 1
+
+
+class BuildListView(ListView):
+    model = Build
+    paginate_by = 10
 
 
 class RaffleParticipantView(CreateView):

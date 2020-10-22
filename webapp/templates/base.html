@@ -21,23 +21,25 @@
     </header>
     <header>
         <nav class="navbar navbar-expand-md navbar-collapse navbar-dark fixed-top">
-            <a class="navbar-brand" href="{% url 'webapp:index' %}">this;</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item {% if request.resolver_match.view_name == 'webapp:index' %}active{% endif %}">
+                        <a class="nav-link p-2 " href="{% url 'webapp:index' %}">this</a>
+                    </li>
+                    <li class="nav-item {% if request.resolver_match.view_name == 'webapp:blog-list' %}active{% endif %}">
                         <a class="nav-link p-2 " href="{% url 'webapp:blog-list' %}">our\ channel</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 " href="{% url 'webapp:custom-pcs' %}">custom\ pcs</a>
+                    <li class="nav-item {% if request.resolver_match.view_name == 'webapp:build-list' %}active{% endif %}">
+                        <a class="nav-link p-2 " href="{% url 'webapp:build-list' %}">our\ builds</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {% if request.resolver_match.view_name == 'webapp:raffle-list' %}active{% endif %}">
                         <a class="nav-link p-2 " href="{% url 'webapp:raffle-list' %}">give\ aways</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 " href="{% url 'webapp:impressum' %}">site \notice</a>
+                    <li class="nav-item {% if request.resolver_match.view_name == 'webapp:impressum' %}active{% endif %}">
+                        <a class="nav-link p-2 " href="{% url 'webapp:impressum' %}">site\ notice</a>
                     </li>
                 </ul>
 <!--                <form class="form-inline mt-2 mt-md-0">-->
@@ -77,7 +79,7 @@
         </div><!-- /.row -->
 
     </main><!-- /.container -->
-    <footer class="footer pb-5 pt-4">
+    <footer class="footer pb-5 pt-4 {% if request.resolver_match.view_name == 'webapp:index' %}index{% endif %}">
         <div class="container">
             <span>ifndef <a href="{% url 'webapp:privacy-policy' %}" >privacyPolicy:</a></span><br>
             <span>define\  <a href="{% url 'webapp:impressum' %}" >legal {}</a></span>

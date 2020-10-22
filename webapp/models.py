@@ -32,3 +32,24 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ['-date_posted']
+
+
+class BuildImage(models.Model):
+    image = models.FileField(storage=fs, upload_to=blog_file_upload_handler)
+    title = models.CharField(max_length=100, default=None, blank=True)
+
+    def __unicode__(self):
+        return self.image
+
+    def __str__(self):
+        return self.image
+
+class Build(models.Model):
+    title = models.CharField(max_length=100, default=None, blank=True)
+    content = models.CharField(max_length=2000, default="", blank=True, null=True)
+    date_posted = models.DateTimeField(auto_created=True, auto_now=True, editable=True, )
+    link = models.CharField(max_length=100, default=None, blank=True, null=True)
+    images = models.ManyToManyField(BuildImage)
+
+    class Meta:
+        ordering = ['-date_posted']
