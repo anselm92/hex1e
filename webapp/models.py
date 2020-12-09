@@ -39,10 +39,10 @@ class BuildImage(models.Model):
     title = models.CharField(max_length=100, default=None, blank=True)
 
     def __unicode__(self):
-        return self.image
+        return self.image.name
 
     def __str__(self):
-        return self.image
+        return self.image.name
 
 class Build(models.Model):
     title = models.CharField(max_length=100, default=None, blank=True)
