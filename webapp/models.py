@@ -57,7 +57,10 @@ class Build(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         if self.order is None:
-            self.order = Build.objects.all().order_by('order').last().order + 1
+            if Build.objects.all().count() > 0:
+                self.order = Build.objects.all().order_by('order').last().order + 1
+            else:
+                self.order = 0
             self.last_order = self.order
             result = super(Build, self).save(force_insert, force_update, using, update_fields)
         if self.order != self.last_order:
