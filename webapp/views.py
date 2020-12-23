@@ -31,6 +31,9 @@ class RaffleListView(ListView):
     model = Raffle
     value = 1
 
+    def get_queryset(self):
+        return super(RaffleListView, self).get_queryset().filter(active=True)
+
 
 class BuildListView(ListView):
     model = Build
