@@ -20,12 +20,12 @@
         </div>
     </header>
     <header>
-        <nav class="navbar navbar-expand-md navbar-collapse navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-collapse container navbar-dark fixed-top">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto ">
                     <li class="nav-item {% if request.resolver_match.view_name == 'webapp:index' %}active{% endif %}">
                         <a class="nav-link p-2 " href="{% url 'webapp:index' %}">this</a>
                     </li>
@@ -58,7 +58,7 @@
 <!--        </nav>-->
 <!--    </div>-->
 
-    <main role="main" class="container pt-5">
+    <main role="main" class="container pt-5" >
         <div class="row">
 
                 {% bootstrap_messages %}
