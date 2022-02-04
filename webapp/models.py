@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+from django.utils.timezone import now
+from tinymce.models import HTMLField
+
 from webapp.fileupload import fs, blog_file_upload_handler, raffle_file_upload_handler
 
 
@@ -24,7 +27,7 @@ class RaffleParticipant(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100, default=None, blank=True)
-    content = models.CharField(max_length=2000, default="", blank=True, null=True)
+    content = HTMLField(max_length=10000)
     featured = models.BooleanField(default=False, blank=True)
     image = models.FileField(storage=fs, upload_to=blog_file_upload_handler)
     image_legacy = models.FileField(storage=fs, upload_to=blog_file_upload_handler, blank=True, null=True)
@@ -46,12 +49,11 @@ class BuildImage(models.Model):
 
 class Build(models.Model):
     title = models.CharField(max_length=100, default=None, blank=True)
-    content = models.CharField(max_length=2000, default="", blank=True, null=True)
-    specs = models.CharField(max_length=2000, default="", blank=True, null=True)
-    date_posted = models.DateTimeField(auto_created=True, auto_now=True, editable=True, )
+    content = HTMLField(max_length=10000, default="", blank=True, null=True)
+    specs = HTMLField(max_length=10000, default="", blank=True, null=True)
+    date_posted = models.DateTimeField(default=now())
     order = models.IntegerField(blank=True, null=True)
     last_order = models.IntegerField(blank=True, null=True, editable=False)
-    link = models.CharField(max_length=100, default=None, blank=True, null=True)
     images = models.ManyToManyField(BuildImage)
 
     def save(self, force_insert=False, force_update=False, using=None,

@@ -21,5 +21,6 @@ import webapp
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('webapp.urls', namespace='webapp'))
+    path('', include('webapp.urls', namespace='webapp')),
+    path('tinymce/', include('tinymce.urls')),
 ]
